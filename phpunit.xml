@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--/**
+ * Configuration for PHPUnit testing
+ * @package P7User
+ * @author Sven Schrodt<sven@schrodt-service.net>
+ * @version 0.1
+ * @since 2020-06-10
+ * @link https://github.com/svenschrodt/P7User
+ * @license https://github.com/svenschrodt/P7User/blob/master/LICENSE.md
+ * @copyright Sven Schrodt<sven@schrodt-service.net>*/-->
+
+
+<phpunit bootstrap="Bootstrap.php" colors="true" verbose="true">
+	<php>
+        <env name="PROJECT_NAME" value="P7User"/>
+    </php>
+
+    <testsuites>
+        <testsuite name="Testing P7User">
+            <directory>./test/</directory>
+        </testsuite>
+    </testsuites>
+  <!--  Rules for code coverage -->
+    <filter>
+        <whitelist>
+            <directory>./</directory>
+            <exclude>
+                <directory>./src/public</directory>
+            </exclude>
+        </whitelist>
+    </filter>
+</phpunit>
