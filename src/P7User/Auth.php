@@ -4,7 +4,6 @@
  *
  * Class for handling user authentification
  *
- *
  * @package P7User
  * @author Sven Schrodt<sven@schrodt-service.net>
  * @version 0.1
@@ -17,5 +16,29 @@ namespace P7User;
 
 class Auth
 {
- 
+    protected static $hashAlgo = PASSWORD_DEFAULT ;
+    
+    /**
+     * Creating hash from given password 
+     * 
+     * @param string $password
+     * @return string
+     */
+    public static function getHashFromPassword(string $password)
+    {
+        //@TODO implementing several algos
+        return password_hash($password, self::$hashAlgo);
+    }
+    
+    /**
+     * Verifying password with hash of (stored) password
+     * 
+     * @param string $password
+     * @param string $hash
+     * @return boolean
+     */
+    public static function verifyPassword(string $password, string $hash)
+    {
+        return password_verify($password, $hash);
+    }
 }
