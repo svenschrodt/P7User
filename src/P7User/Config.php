@@ -19,8 +19,8 @@ namespace P7User;
 
 class Config
 {
-
-    
+    // Enabling full error reporting for dev environment
+    const debug = true;
     
     /**
      * Constructor function 
